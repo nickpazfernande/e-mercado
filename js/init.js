@@ -45,7 +45,7 @@ function signOut() {
   auth2.signOut().then(function () {
     console.log('User signed out.');
   });
-  window.location.replace("https://nickpazfernande.github.io/workspace-inicial");
+  window.location.replace("https://nickpazfernande.github.io/e-comercio");
 }
 function getUser() {
   document.getElementById('idGoogle').innerHTML = localStorage.getItem('userLocal');
