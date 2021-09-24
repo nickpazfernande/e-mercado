@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Iconos  -->
+  <script src="https://kit.fontawesome.com/a9ed237e65.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Scripts de google -->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id"
+    content="24113857444-au3gp7pl0osr77nmqncauak21earsjhk.apps.googleusercontent.com">
+
+  <!-- Libreria de Jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+  <style>
+    #filtros {
+      display: none;
+    }
+
+    .g-signin2 {
+      display: none;
+    }
+  </style>
+</head>
+
+<body class="fondo">
+  <!-- Menu lateral fijo -->
+  <div class="sidebar">
+    <a href="home.html"> <i class="fas fa-home"></i> Home</a>
+    <a href="categories.html">Categorías</a>
+    <a href="products.html" class="active">Productos</a>
+    <a href="sell.html"> <i class="fa-solid fa-sack-dollar"></i>Vender</a>
+    <a href="cart.html">Mi carrito</a>
+    <footer class="text-muted" style="position: fixed;
+  bottom: 0;">
+      <div class=" mb-3 row justify-content-center">
+        <div class="col-md-4"></div>
+        <img id="pic" class="rounded-circle col-auto">
+        <div class="col-md-4"></div>
+      </div>
+      <div class="container">
+        <p id="idGoogle" class="" style="color: white;">Nombre de usuario</p>
+      </div>
+      <a href="index.html" onclick="SignOutTotal()">Cerrar sesión</a>
+    </footer>
+  </div>
+
+  <!-- Titulo -->
+  <h3 class="text-center pt-3 mb-4 bg-light pb-3" id="titleProduct"> Producto </h3>
+  <div class="text-center container main">
+    <ul class="breadcrumb main">
+      <li> >> <a href="home.html">Home / </a></li>
+      <li><a href="categories.html">Categorías /</a></li>
+      <li><a href="products.html">Autos /</a></li>
+      <li class="active">Chevrolet Onix Joy /</li>
+    </ul>
+  </div>
+
+  <!-- Section encabezado de la pagina -->
+  <section class="container main">
+    <div id="" class=" row text-center bg-light">
+      <div id class="col-md-2"></div>
+      <!-- Cargo el corusel desde JS -->
+      <div id="carousel" class="col-md-5 mt-5 pl-3 ">asd</div>
+      <!-- Cargo Nombre y Precio desde JS -->
+      <div id="info" class=" col-md-5">asd </div>
+    </div>
+
+  </section>
+
+  <!-- Section descripcion especifica del producto -->
+  <div class="main bg-light container pt-3 pb-3">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div id="moreInfo" class="col-md-10"></div>
+
+    </div>
+
+  </div>
+
+  <!-- Section de comentarios -->
+  <section class=" main container bg-light pb-5">
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-8">
+          <div class="headings d-flex justify-content-between align-items-center mb-3">
+            <h5>Comentarios </h5>
+          </div>
+          <!-- Comentarios cargados desde Js -->
+          <div id="comments"></div>
+
+          <!-- Agregar comentario -->
+          <div class="mt-3 ">
+          </div>
+          <div class="container bootdey">
+            <div class="col-md-12 bootstrap snippets">
+              <div class="panel">
+                <div class="panel-body">
+                  <textarea class="form-control " id="sendComments" rows="2"
+                    placeholder="Escribe aqui tu comentario..."></textarea>
+                  <div class="mar-top clearfix">
+                    <button class="btn btn-sm btn-info pull-right mt-1" onclick="sendComments()" type="submit"><i
+                        class="fa fa-pencil fa-fw"></i> Comentar </button>
+                    <small class="pull-right pt-2 pr-2 text-danger " id="aviso">No olvides comentar y calificar.</small>
+                    <small>¡No olvides calificarlo! </small>
+                    <p class="clasificacion">
+                      <input id="radio1" type="radio" name="estrellas" value="5">
+                      <!--
+                      --><label for="radio1">★</label>
+                      <!--
+                      --><input id="radio2" type="radio" name="estrellas" value="4">
+                      <!--
+                      --><label for="radio2">★</label>
+                      <!--
+                      --><input id="radio3" type="radio" name="estrellas" value="3">
+                      <!--
+                      --><label for="radio3">★</label>
+                      <!--
+                      --><input id="radio4" type="radio" name="estrellas" value="2">
+                      <!--
+                      --><label for="radio4">★</label>
+                      <!--
+                      --><input id="radio5" type="radio" name="estrellas" value="1">
+                      <!--
+                      --><label for="radio5">★</label>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+
+
+  <!-- FOOTER - Pie de pagina.  -->
+  <footer class="text-muted main pt-5 mt-5 bg-light">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+
+
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <!-- Boton de inicio de sesion de Google -->
+  <div class="g-signin2" data-onsuccess="onSignIn1"></div>
+
+  <!-- Script, locales/boostrap -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/product-info.js"></script>
+  <script src="js/login.js"></script>
+</body>
+
+</html>

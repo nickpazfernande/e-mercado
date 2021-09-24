@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+
+  <!-- Scripts de google -->
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+  <meta name="google-signin-client_id"
+    content="24113857444-au3gp7pl0osr77nmqncauak21earsjhk.apps.googleusercontent.com">
+
+  <!-- Libreria de Jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+
+</head>
+
+<body class="text-center ">
+
+  <!-- Contenedor principal de login. -->
+  <div class="container login-container" style="margin-top: 10%; margin-bottom: 10%;">
+    <div class="row">
+
+      <!-- Contenedor Bienvrenida (Izquierda) fondo blanco -->
+      <div class="col-md-6 login-form-1" style="align-items: center;">
+
+        <form>
+          <!-- Imagen de Jap -->
+          <div class="form-group" style="justify-items: center; margin-top: 10%; margin-bottom: º0;">
+            <img src="img/login.png" class="container login-container">
+          </div>
+        </form>
+      </div>
+
+      <!-- Contenedor de login (Derecha), fondo oscuro -->
+      <div class="col-md-6 login-form-2">
+        <h3 style="margin-top:10%">Iniciar sesión</h3>
+
+        <!-- Form de Inicio de sesion -->
+        <form action="home.html" >
+          <!-- Input de usuario -->
+          <div class="form-group">
+            <input type="text" id="user" required class="form-control" placeholder="Usuario *" value="" />
+          </div>
+          <!-- Input de password -->
+          <div class="form-group">
+            <input type="password" id="pass" required class="form-control" placeholder="Contraseña *" value="" />
+          </div>
+
+          <!-- Botones de inicio de sesion -->
+          <div class="form-group" style="align-items: center; margin-left: 50%; margin-right: 50%;">
+
+            <!-- boton de inicio de sesion  -->
+            <input type="submit" onclick="setUser();" value="Iniciar sesión" style="margin-bottom: 15px;" class="btn btn-primary " value="Login">
+
+            <!-- Boton de inicio de sesion de Google -->
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            
+          </div>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Script locales -->
+  
+  <script src="js/login.js"></script>
+</body>
+
+</html>
