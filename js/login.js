@@ -15,7 +15,7 @@ function onSignIn(googleUser) {
     $("#idGoogle").text(profile.getGivenName());
     localStorage.setItem('userGoogle' ,  'inicio' )
 
-    window.location.replace("https://nickpazfernande.github.io/workspace-inicial/home.html");
+    window.location.replace("https://nickpazfernande.github.io/e-mercado/home.html");
 }
 
 function onSignIn1(googleUser) {
