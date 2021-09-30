@@ -12,13 +12,12 @@ document.addEventListener("DOMContentLoaded", function (e) {
       productInfo = resultObj.data;
       showProductInfo();
     }
-  });
-
-  getJSONData(PRODUCTS_URL).then(function (resultObj) {
-    if (resultObj.status === "ok") {
-      arrayProduct = resultObj.data;
-      showRelated();
-    }
+    getJSONData(PRODUCTS_URL).then(function (resultObj) {
+      if (resultObj.status === "ok") {
+        arrayProduct = resultObj.data;
+        showRelated();
+      }
+    });
   });
 
   //Esta funcion tra la informacion de los comentarios.
