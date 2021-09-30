@@ -1,17 +1,20 @@
-.jumbotron, .card-body, .container, .site-header{
-    font-family: 'Raleway', serif !important;
+.jumbotron,
+.card-body,
+.container,
+.site-header {
+  font-family: "Raleway", serif !important;
 }
 
-.jumbotron .display-4{
-    font-weight: bold;
+.jumbotron .display-4 {
+  font-weight: bold;
 }
 
 .jumbotron {
   height: 50vh;
   padding: 5em inherit;
   margin-bottom: 0;
-  background-color: #53C0FB;
-  background: url('../img/cover_back.png');
+  background-color: #53c0fb;
+  background: url("../img/cover_back.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -41,7 +44,7 @@
   text-shadow: 1px 1px 2px grey;
 }
 
-.jumbotron .lead{
+.jumbotron .lead {
   font-size: 38px;
 }
 
@@ -51,12 +54,12 @@ footer {
 }
 
 footer p {
-  margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
 }
 
 .site-header a {
   color: white;
-  transition: ease-in-out color .15s;
+  transition: ease-in-out color 0.15s;
 }
 
 .light-text {
@@ -67,15 +70,15 @@ footer p {
   color: black;
 }
 
-.dropzone{
-  border: 2px dashed #0087F7;
+.dropzone {
+  border: 2px dashed #0087f7;
   border-radius: 5px;
   background: white;
 }
 
-.alert{
+.alert {
   position: fixed;
-  top:80px;
+  top: 80px;
   width: 50%;
   left: 50%;
   transform: translate(-50%, 0);
@@ -86,7 +89,7 @@ footer p {
   position: relative;
   width: 64px;
   height: 64px;
-  top:50%;
+  top: 50%;
   left: 50%;
 }
 .lds-ring div {
@@ -119,13 +122,13 @@ footer p {
   }
 }
 
-#spinner-wrapper{
+#spinner-wrapper {
   position: fixed;
-  background-color: rgba(0,0,0,0.5);
-  width:100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
   height: 100%;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   z-index: 1021;
   display: none;
 }
@@ -139,61 +142,64 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
-.login-container{
-    margin-top: 5%;
-    margin-bottom: 5%;
+.login-container {
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
-.login-form-1{
-    padding: 5%;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
-    background-color: #f8f9fa;
+.login-form-1 {
+  padding: 5%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+  background-color: #f8f9fa;
 }
-.login-form-1 h3{
-    text-align: center;
-    color: #333;
+.login-form-1 h3 {
+  text-align: center;
+  color: #333;
 }
-.login-form-2{
-    padding: 5%;
-    background: #343a40;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+.login-form-2 {
+  padding: 5%;
+  background: #343a40;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
-.login-form-2 h3{
-    text-align: center;
-    color: #fff;
+.login-form-2 h3 {
+  text-align: center;
+  color: #fff;
 }
-.login-container form{
-    padding: 10%;
+.login-container form {
+  padding: 10%;
 }
-.btnSubmit
-{
-    width: 50%;
-    border-radius: 1rem;
-    padding: 1.5%;
-    border: none;
-    cursor: pointer;
+.btnSubmit {
+  width: 50%;
+  border-radius: 1rem;
+  padding: 1.5%;
+  border: none;
+  cursor: pointer;
 }
-.login-form-1 .btnSubmit{
-    font-weight: 600;
-    color: #fff;
-    background-color: #343a40;
+.login-form-1 .btnSubmit {
+  font-weight: 600;
+  color: #fff;
+  background-color: #343a40;
 }
-.login-form-2 .btnSubmit{
-    font-weight: 600;
-    color: #0062cc;
-    background-color: #fff;
+.login-form-2 .btnSubmit {
+  font-weight: 600;
+  color: #0062cc;
+  background-color: #fff;
 }
-.login-form-2 .ForgetPwd{
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
+.login-form-2 .ForgetPwd {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
 }
-.login-form-1 .ForgetPwd{
-    color: #0062cc;
-    font-weight: 600;
-    text-decoration: none;
+.login-form-1 .ForgetPwd {
+  color: #0062cc;
+  font-weight: 600;
+  text-decoration: none;
+}
+/************************* NAVBAR *************************************/
+.navbar {
+  display: none !important;
 }
 
-/*Menu laterla*/
+/*************************Menu laterla********************************/
 
 .sidebar {
   margin: 0;
@@ -211,7 +217,7 @@ a.custom-card:hover {
   padding: 16px;
   text-decoration: none;
 }
- 
+
 .sidebar a.active {
   background-color: #229fbc;
   color: white;
@@ -229,7 +235,7 @@ div.content {
 }
 .main {
   margin-left: 160px; /* Same as the width of the sidenav */
-  
+
   padding: 0px 10px;
 }
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
@@ -238,16 +244,29 @@ div.content {
     width: 100%;
     height: auto;
     position: relative;
+    display: none;
   }
-  .sidebar a {float: left;}
-  div.content {margin-left: 0;}
-  .main{margin-left: auto;}
-  .infoUser{display: none;}
+  .navbar {
+    display: block !important;
+    position: sticky !important;
+  }
+
+  .sidebar a {
+    float: left;
+  }
+  div.content {
+    margin-left: 0;
+  }
+  .main {
+    margin-left: auto;
+  }
+  .infoUser {
+    display: none;
+  }
   #pic {
     display: none;
   }
 }
-
 
 /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
 @media screen and (max-width: 400px) {
@@ -258,8 +277,6 @@ div.content {
   #pic {
     display: none;
   }
-
-  
 }
 input[type="radio"] {
   display: none;
@@ -283,14 +300,14 @@ input[type="radio"]:checked ~ label {
   color: orange;
 }
 .fondo {
-  background-color: #e9ecef;}
+  background-color: #e9ecef;
+}
 /* Comments */
 .card {
   border: none;
   box-shadow: 5px 6px 6px 2px #e9ecef;
-  border-radius: 4px
+  border-radius: 4px;
 }
-
 
 .dots {
   height: 4px;
@@ -298,18 +315,18 @@ input[type="radio"]:checked ~ label {
   margin-bottom: 2px;
   background-color: #bbb;
   border-radius: 50%;
-  display: inline-block
+  display: inline-block;
 }
 
 .badge {
   padding: 7px;
   padding-right: 9px;
   padding-left: 16px;
-  box-shadow: 5px 6px 6px 2px #e9ecef
+  box-shadow: 5px 6px 6px 2px #e9ecef;
 }
 
 .user-img {
-  margin-top: 4px
+  margin-top: 4px;
 }
 
 .check-icon {
@@ -317,41 +334,39 @@ input[type="radio"]:checked ~ label {
   color: #c3bfbf;
   top: 1px;
   position: relative;
-  margin-left: 3px
+  margin-left: 3px;
 }
 
 .form-check-input {
   margin-top: 6px;
   margin-left: -24px !important;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .form-check-input:focus {
-  box-shadow: none
+  box-shadow: none;
 }
 
 .icons i {
-  margin-left: 8px
+  margin-left: 8px;
 }
 
 .reply {
-  margin-left: 12px
+  margin-left: 12px;
 }
 
 .reply small {
-  color: #b7b4b4
+  color: #b7b4b4;
 }
 
 .reply small:hover {
   color: green;
-  cursor: pointer
+  cursor: pointer;
 }
 /*Para las estrellas*/
 * {
   box-sizing: border-box;
 }
-
-
 
 .heading {
   font-size: 25px;
@@ -370,11 +385,11 @@ input[type="radio"]:checked ~ label {
 .side {
   float: left;
   width: 15%;
-  margin-top:10px;
+  margin-top: 10px;
 }
 
 .middle {
-  margin-top:10px;
+  margin-top: 10px;
   float: left;
   width: 70%;
 }
@@ -403,11 +418,11 @@ input[type="radio"]:checked ~ label {
   position: relative;
   font-family: FontAwesome;
 }
- 
+
 .stars-outer::before {
   content: "\f006 \f006 \f006 \f006 \f006";
 }
- 
+
 .stars-inner {
   position: absolute;
   top: 0;
@@ -416,12 +431,12 @@ input[type="radio"]:checked ~ label {
   overflow: hidden;
   width: 0;
 }
- 
+
 .stars-inner::before {
   content: "\f005 \f005 \f005 \f005 \f005";
   color: #f8ce0b;
 }
 
-#aviso{
+#aviso {
   display: none;
 }

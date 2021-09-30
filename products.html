@@ -28,6 +28,9 @@
 
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  <!-- Boostrtap 5.0 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 
   <style>
@@ -43,26 +46,44 @@
 
 <body>
 
-  <!-- Menu lateral fijo -->
-  <div class="sidebar">
+  <!-- Menu lateral fijo, pantallas grandes. -->
+  <div class="sidebar pt-4">
     <a href="home.html"> <i class="fas fa-home"></i> Home</a>
     <a href="categories.html">Categorías</a>
     <a href="products.html" class="active">Productos</a>
     <a href="sell.html"> <i class="fa-solid fa-sack-dollar"></i>Vender</a>
-    <a href="cart.html">Mi carrito</a>
-    <footer class="text-muted" style="position: fixed;
+    <hr>
+    
+    
+    
+    <div class="text-muted align-bottom mt-5" style="
     bottom: 0;">
-      <div class=" mb-3 row justify-content-center">
+
+    <!-- Imagen de google -->
+      <div class=" mb-3 row">
         <div class="col-md-4"></div>
-        <img id="pic" class="rounded-circle col-auto">
+        <img id="pic" class="rounded-circle col-auto justify-content-center">
         <div class="col-md-4"></div>
       </div>
-      <div class="container">
-        <p id="idGoogle" class="" style="color: white;">Nombre de usuario</p>
+
+      
+      <a type="button" id="idGoogle" class="dropdown-toggle text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Username
+      </a>
+      <div class="dropdown-menu bg-dark">
+        <a class="dropdown-item" href="cart.html">Mi carrito</a>
+        <a class="dropdown-item" href="my-profile.html">Perfil</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="index.html" onclick="SignOutTotal()">Cerrar Cesión</a>
       </div>
+
       <a href="index.html" onclick="SignOutTotal()">Cerrar sesión</a>
-    </footer>
+    </div>
   </div>
+
+  <!-- Menu superior, pantallas chicas. -->
+  <div id="navBar">  </div>
+  
 
   <!-- Titulo de la pagína -->
   <div class="text-center p-4 main">

@@ -16,28 +16,59 @@
 </head>
 
 <body>
-  <!-- Menu lateral fijo -->
-  <div class="sidebar">
-    <a class="active" href="#home"> <i class="fas fa-home"></i> Home</a>
-    <a href="categories.html">Categorías</a>
-    <a href="products.html">Productos</a>
-    <a href="sell.html">Vender</a>
-    <a href="cart.html">Mi carrito</a>
-    <a href="#" onclick="signOut();">Cerrar sesión</a>
-    <script>
-        function signOut() {
-            var auth2 = gapi.auth2.getAuthInstance();
-            auth2.signOut().then(function () {
-                console.log('User signed out.');
-            });
-            window.location.replace("https://nickpazfernande.github.io/workspace-inicial");
-        }
-    </script>
-    <img id="pic" class="rounded-circle" style="width: 4%; height: 4%;">
-    <p id="idGoogle" style="color: white;"></p>
+  <!-- Menu superior, pantallas chicas. -->
+  <div id="navBar"></div>
+
+  <!-- Menu lateral fijo, pantallas grandes. -->
+  <div class="sidebar pt-4">
+    <a href="home.html"> <i class="fas fa-home"></i> Home</a>
+    <a href="categories.html" class="active"
+      ><i class="fas fa-grip-horizontal"></i> Categorías</a
+    >
+    <a href="products.html"> <i class="fas fa-boxes"></i> Productos</a>
+    <a href="sell.html"> <i class="fas fa-shopping-cart"></i> Vender</a>
+    <hr />
+
+    <div class="text-muted align-bottom mt-5" style="bottom: 0">
+      <!-- Imagen de google -->
+      <div class="mb-3 row">
+        <div class="col-md-4"></div>
+        <img
+          id="pic"
+          class="rounded-circle col-auto justify-content-center"
+        />
+        <div class="col-md-4"></div>
+      </div>
+
+      <a
+        type="button"
+        id="idGoogle"
+        class="dropdown-toggle text-white "
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="fas fa-user"></i>
+        Username
+      </a>
+      <div class="dropdown-menu bg-dark">
+        <a class="dropdown-item" href="cart.html">Mi carrito</a>
+        <a class="dropdown-item" href="my-profile.html">Perfil</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="index.html" onclick="SignOutTotal()">
+          <i class="fas fa-sign-out-alt"></i> Cerrar Cesión</a
+        >
+      </div>
+
+      <a href="index.html" onclick="SignOutTotal()">
+        <i class="fas fa-sign-out-alt"></i> Cerrar sesión</a
+      >
+    </div>
+  </div>
 </div>
-  <main role="main">
-    <div class="container mt-5">
+
+  <main role="main container">
+    <div class="main container pt-5">
       <div class="text-center p-4">
         <h2>Descripción de la categoría</h2>
         <p class="lead">Encontrarás aquí toda la información de la categoría seleccionada.</p>
@@ -71,7 +102,7 @@
       <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
     </div>
   </main>
-  <footer class="text-muted">
+  <footer class="text-muted main">
     <div class="container">
       <p class="float-right">
         <a href="#">Volver arriba</a>
