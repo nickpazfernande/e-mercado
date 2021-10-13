@@ -2,6 +2,7 @@
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
   <head>
+    <link href="css/styles.css" rel="stylesheet" />
     <link
       rel="canonical"
       href="https://getbootstrap.com/docs/4.3/examples/album/"
@@ -12,7 +13,7 @@
     />
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
+
     <link href="css/font-awesome.min.css" rel="stylesheet" />
 
     <!-- Iconos  -->
@@ -33,8 +34,10 @@
 
     <!-- Latest compiled and minified CSS -->
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
     />
 
     <!-- Boostrtap 5.0 -->
@@ -110,24 +113,135 @@
         >
       </div>
     </div>
-    <div class="container p-5">
-      <div
-        class="alert alert-danger"
-        role="alert"
-        style="position: relative; width: auto; top: 0"
-      >
-        <h4 class="alert-heading">¡A trabajar! :)</h4>
-        <p>
-          Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y
-          Entrega 7 (Fecha de entrega: 14/11/2021).
+    <!-- Titulo -->
+    <h2 class="main text-center pt-3 mb-4 bg-light pb-3" id="titleProduct">
+      Carrito
+    </h2>
+
+    <!-- Main de la pagina -->
+    <section class="main my-5 py-5 mr-3 bg-light">
+      <h2 class="text-center pb-3">Articulos</h2>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-6 card">
+          <table class="table">
+            <thead>
+              <tr class="card-header card-title">
+                <th scope="col">#</th>
+                <th scope="col">Articulo</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Subtotal</th>
+              </tr>
+            </thead>
+            <tbody id="tableCart">
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>
+                  <img class="img-fluid" src="./img/tree1.jpg" alt="" />
+                </td>
+<div></div>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>
+                  <img class="img-fluid" src="./img/tree1.jpg" alt="" />
+                </td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <div class="col-sm-12 col-md-12 cart-estimate">
+              <div class="card mb-3">
+                <div class="card-header">
+                  <h2 class="card-title text-center">Costo de envio</h2>
+                </div>
+                <div class="card-body">
+                  <div class="card-text">
+                    <div id="estimate_shipping">
+                      <div class="form-check text-center">
+                        <select class="form-select" aria-label="Default select example">
+                          <option selected>Seleccione tipo de envio</option>
+                          <option value="1">Standar (12-15 días)</option>
+                          <option value="2">Express (5-8 días)</option>
+                          <option value="3">Premium (2-5 días)</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 cart-totals">
+              <table class="table table-striped">
+                <tbody>
+                  <tr class="totals">
+                    <td colspan="1" class="text-left">Subtotal</td>
+                    <td colspan="1" class="text-right">$0</td>
+                  </tr>
+                  <tr class="totals ">
+                    <td colspan="1" class="text-left">
+                      Envio
+                    </td>
+                    <td colspan="1" class="text-right">
+                      $15%
+                    </td>
+                  </tr>
+                  <tr class="totals key card-body">
+                    <td colspan="1" class="text-left">
+                      <strong>Total</strong>
+                    </td>
+                    <td colspan="1" class="text-right">
+                      <strong>$1.200.000</strong>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="text-center cart-actions">
+                <a
+                  href=""
+                  class="btn btn-primary btn-block"
+                  title="Proceed to Checkout"
+                  >Comprar</a
+                >
+
+                <a
+                  href="./products.html"
+                  class="btn btn-link btn-block"
+                  title="← Seguir comprando"
+                  >← Seguir Comprando</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="text-muted bg-light main mt-5 pt-5 ">
+      <div class="container main">
+        <p class="float-right">
+          <a href="#">Volver arriba</a>
         </p>
-        <hr />
-        <p class="mb-0">
-          Para saber qué debes hacer, fijate en la actividad en CREA
-          correspondiente a esta entrega.
+        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+        <p>
+          Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la
+          letra del obligatorio.
         </p>
       </div>
-    </div>
+    </footer>
+
     <div id="spinner-wrapper">
       <div class="lds-ring">
         <div></div>
