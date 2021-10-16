@@ -120,50 +120,30 @@
 
     <!-- Main de la pagina -->
     <section class="main my-5 py-5 mr-3 bg-light">
-      <h2 class="text-center pb-3">Articulos</h2>
+
       <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-6 card">
-          <table class="table">
+          <table class="table ">
             <thead>
               <tr class="card-header card-title">
                 <th scope="col">#</th>
                 <th scope="col">Articulo</th>
-                <th scope="col">Imagen</th>
+                <th scope="col" class="ocultarTabla">Imagen</th>
                 <th scope="col">Cantidad</th>
                 <th scope="col">Precio</th>
                 <th scope="col">Subtotal</th>
               </tr>
             </thead>
-            <tbody id="tableCart">
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>
-                  <img class="img-fluid" src="./img/tree1.jpg" alt="" />
-                </td>
-<div></div>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>
-                  <img class="img-fluid" src="./img/tree1.jpg" alt="" />
-                </td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-              </tr>
+            <tbody id="tableCart" class="">
+              
             </tbody>
           </table>
         </div>
         <div class="col-md-4">
-          <div class="row">
+          <div class="row card mx-2">
             <div class="col-sm-12 col-md-12 cart-estimate">
-              <div class="card mb-3">
+              <div class=" card-header mb-3 mt-2 ">
                 <div class="card-header">
                   <h2 class="card-title text-center">Costo de envio</h2>
                 </div>
@@ -178,6 +158,12 @@
                           <option value="3">Premium (2-5 días)</option>
                         </select>
                     </div>
+                    <div class="form-check text-center">
+                      <select class="form-select" onchange="changeCurrency" aria-label="Default select example">
+                        <option selected>Moneda: UYU</option>
+                        <option value="1">Moneda: USD</option>
+                      </select>
+                  </div>
                   </div>
                 </div>
               </div>
@@ -188,7 +174,7 @@
                 <tbody>
                   <tr class="totals">
                     <td colspan="1" class="text-left">Subtotal</td>
-                    <td colspan="1" class="text-right">$0</td>
+                    <td colspan="1" class="text-right" id="finally" ></td>
                   </tr>
                   <tr class="totals ">
                     <td colspan="1" class="text-left">
@@ -202,12 +188,15 @@
                     <td colspan="1" class="text-left">
                       <strong>Total</strong>
                     </td>
-                    <td colspan="1" class="text-right">
-                      <strong>$1.200.000</strong>
+                    <td colspan="1"  class="text-right" id="totalFinally">
+                        $
                     </td>
+                    
                   </tr>
                 </tbody>
+                
               </table>
+              <small id="opcionCuotas" class="float-right text-secondary pb-2"> O 6 pagos de 9999</small>
 
               <div class="text-center cart-actions">
                 <a
@@ -225,13 +214,14 @@
                 >
               </div>
             </div>
+            <!-- <div id="usd" class="container" > El valor del dolar hoy es: </div> -->
           </div>
         </div>
       </div>
     </section>
     <footer class="text-muted bg-light main mt-5 pt-5 ">
-      <div class="container main">
-        <p class="float-right">
+      <div class="container main ml-auto">
+        <p class="">
           <a href="#">Volver arriba</a>
         </p>
         <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
