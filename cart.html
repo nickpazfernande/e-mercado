@@ -2,6 +2,7 @@
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
   <head>
+    <title>Carrito | e-mercado</title>
     <link href="css/styles.css" rel="stylesheet" />
     <link
       rel="canonical"
@@ -132,7 +133,7 @@
                 <th scope="col" class="ocultarTabla">Imagen</th>
                 <th scope="col">Cantidad</th>
                 <th scope="col">Precio</th>
-                <th scope="col">Subtotal</th>
+                <th scope="col">Subtotal (UYU)</th>
               </tr>
             </thead>
             <tbody id="tableCart" class="">
@@ -159,9 +160,9 @@
                         </select>
                     </div>
                     <div class="form-check text-center">
-                      <select class="form-select" onchange="changeCurrency" aria-label="Default select example">
-                        <option selected>Moneda: UYU</option>
-                        <option value="1">Moneda: USD</option>
+                      <select class="form-select" id="inputCurrency" onchange="changeCurrency()" aria-label="Default select example">
+                        <option selected value="UYU">Moneda: UYU</option>
+                        <option value="USD">Moneda: USD</option>
                       </select>
                   </div>
                   </div>
@@ -188,9 +189,7 @@
                     <td colspan="1" class="text-left">
                       <strong>Total</strong>
                     </td>
-                    <td colspan="1"  class="text-right" id="totalFinally">
-                        $
-                    </td>
+                    <td colspan="1"  class="text-right" id="totalFinally"></td>
                     
                   </tr>
                 </tbody>
@@ -200,9 +199,10 @@
 
               <div class="text-center cart-actions">
                 <a
-                  href=""
+                  href="#direccion"
                   class="btn btn-primary btn-block"
                   title="Proceed to Checkout"
+                  onclick="showDireccion()"
                   >Comprar</a
                 >
 
@@ -219,8 +219,42 @@
         </div>
       </div>
     </section>
+
+
+    <section class="main my-5 py-5 mr-3 bg-light" id="direccion">
+      <div class=" offset-md-2">
+      <form class="col-md-10" id="formDireccion" >
+        <h2 class="text-center mb-4 pb-4">DIRECCIÓN </h2>
+        <div class="mb-2 row ">
+          <div class="col-md-6">
+          <label for="exampleInputEmail1" class="form-label">Calle</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          
+        </div>
+        <div class="col-md-6">
+          <label for="exampleInputEmail1" class="form-label">Numero</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          
+        </div>
+        <div class="mb-2">
+          <label for="exampleInputPassword1" class="form-label mt-2">Ciudad</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-2 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        
+        <button type="submit" class="btn btn-success">Confirmar compra</button>
+      </form>
+      
+    </div>
+    
+  </section>
+
+
     <footer class="text-muted bg-light main mt-5 pt-5 ">
-      <div class="container main ml-auto">
+      <div class="container text-center">
         <p class="">
           <a href="#">Volver arriba</a>
         </p>

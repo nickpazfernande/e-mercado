@@ -253,7 +253,7 @@ div.content {
     position: relative;
     display: none;
   }
-  .ocultarTabla{
+  .ocultarTabla {
     display: none;
   }
   .navbar {
@@ -280,7 +280,6 @@ div.content {
 
 /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
 @media screen and (max-width: 400px) {
-  
   .sidebar a {
     text-align: center;
     float: none;
@@ -449,5 +448,8 @@ input[type="radio"]:checked ~ label {
 }
 
 #aviso {
+  display: none;
+}
+#direccion {
   display: none;
 }
