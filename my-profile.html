@@ -9,7 +9,7 @@
     />
     <meta name="description" content="" />
     <title>eMercado - Todo lo que busques está aquí</title>
-
+    
     <link
       rel="canonical"
       href="https://getbootstrap.com/docs/4.3/examples/album/"
@@ -108,7 +108,43 @@
       </div>
     </div>
 
-    <footer class="text-muted bg-light">
+
+    <main class="main">
+      <h2 class="text-center py-5">MI PERFIL</h4>
+      <div class="container rounded bg-white pt-5">
+        <div class="row">
+            <div class="col-md-4 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="90"><span class="font-weight-bold">Nombre de usuario</span><span class="text-black-50">correo@ejemplo.com</span><span>Uruguay</span></div>
+            </div>
+            <div class="col-md-8">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex flex-row align-items-center back"><i class="fa fa-long-arrow-left mr-1 mb-1"></i>
+                            <h6>Volver a inicio</h6>
+                        </div>
+                        <h6 class="text-right">Editar perfil</h6>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6"><input type="text" class="form-control" placeholder="Nombre*" ></div>
+                        <div class="col-md-6"><input type="text" class="form-control" placeholder="Apellido*"></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6"><input type="text" class="form-control" placeholder="Email*"></div>
+                        <div class="col-md-6"><input type="text" class="form-control" placeholder="Telefono *"></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6"><input type="text" class="form-control" placeholder="address" disabled></div>
+                        <div class="col-md-6"><input type="text" class="form-control" disabled placeholder="Pais"></div>
+                    </div>
+                    
+                    <div class="mt-5 text-right"><button class="btn btn-success" onclick="saveChange();" type="button">Guardar datos</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+
+    <footer class="text-muted bg-light text-center mt-5">
       <div class="container">
         <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
         <p>
