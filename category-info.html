@@ -32,18 +32,18 @@
     <div class="text-muted align-bottom mt-5" style="bottom: 0">
       <!-- Imagen de google -->
       <div class="mb-3 row justify-content-center">
-        <div class="col-md-4"></div>
+        <div class="col-md-2"></div>
         <img
           id="pic"
-          class="rounded-circle col-auto justify-content-center"
+          class="rounded-circle w-50 col-auto justify-content-center"
         />
-        <div class="col-md-4"></div>
+        <div class="col-md-2"></div>
       </div>
 
       <a
         type="button"
         id="idGoogle"
-        class="dropdown-toggle text-white "
+        class="dropdown-toggle text-white"
         data-toggle="dropdown"
         aria-haspopup="true"
         aria-expanded="false"
@@ -67,17 +67,17 @@
   </div>
 </div>
 
-  <main role="main container">
+  <main role="main">
     <div class="main container pt-5">
-      <div class="text-center p-4">
+      <div class="text-center p-4 main">
         <h2>Descripción de la categoría</h2>
         <p class="lead">Encontrarás aquí toda la información de la categoría seleccionada.</p>
         <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea la categoría
           seleccionada previamente, siempre se visualizará la presente: <strong>Autos</strong>.</p>
       </div>
-      <h3 id="categoryName"></h3>
-      <hr class="my-3">
-      <dl>
+      <h3 id="categoryName" class="main"></h3>
+      <hr class="my-3 main">
+      <dl class="main">
         <dt>Descripción</dt>
         <dd>
           <p id="categoryDescription"></p>
@@ -99,16 +99,16 @@
           </div>
         </dd>
       </dl>
-      <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
+      <a type="button" class="main btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
     </div>
   </main>
-  <footer class="text-muted main">
+  <footer class="text-muted main pt-5 bg-light mt-5">
     <div class="container">
       <p class="float-right">
         <a href="#">Volver arriba</a>
       </p>
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+      <p class="main">Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p class="main">Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
   </footer>
   <div id="spinner-wrapper">

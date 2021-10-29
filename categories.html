@@ -64,20 +64,22 @@
     <!-- Menu lateral fijo, pantallas grandes. -->
     <div class="sidebar pt-4">
       <a href="home.html"> <i class="fas fa-home"></i> Home</a>
-      <a href="categories.html" class="active">Categorías</a>
-      <a href="products.html">Productos</a>
-      <a href="sell.html"> <i class="fa-solid fa-sack-dollar"></i>Vender</a>
+      <a href="categories.html" class="active"
+        ><i class="fas fa-grip-horizontal"></i> Categorías</a
+      >
+      <a href="products.html"> <i class="fas fa-boxes"></i> Productos</a>
+      <a href="sell.html"> <i class="fas fa-shopping-cart"></i> Vender</a>
       <hr />
 
       <div class="text-muted align-bottom mt-5" style="bottom: 0">
         <!-- Imagen de google -->
         <div class="mb-3 row justify-content-center">
-          <div class="col-md-4"></div>
+          <div class="col-md-2"></div>
           <img
             id="pic"
-            class="rounded-circle col-auto justify-content-center"
+            class="rounded-circle w-50 col-auto justify-content-center"
           />
-          <div class="col-md-4"></div>
+          <div class="col-md-2"></div>
         </div>
 
         <a
@@ -88,18 +90,21 @@
           aria-haspopup="true"
           aria-expanded="false"
         >
+          <i class="fas fa-user"></i>
           Username
         </a>
         <div class="dropdown-menu bg-dark">
           <a class="dropdown-item" href="cart.html">Mi carrito</a>
           <a class="dropdown-item" href="my-profile.html">Perfil</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="index.html" onclick="SignOutTotal()"
-            >Cerrar Cesión</a
+          <a class="dropdown-item" href="index.html" onclick="SignOutTotal()">
+            <i class="fas fa-sign-out-alt"></i> Cerrar Cesión</a
           >
         </div>
 
-        <a href="index.html" onclick="SignOutTotal()">Cerrar sesión</a>
+        <a href="index.html" onclick="SignOutTotal()">
+          <i class="fas fa-sign-out-alt"></i> Cerrar sesión</a
+        >
       </div>
     </div>
 

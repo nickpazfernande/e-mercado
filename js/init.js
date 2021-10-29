@@ -120,6 +120,17 @@ function addNavBar() {
   document.getElementById("navbarDropdown").innerHTML =
     localStorage.getItem("userLocal");
 }
+
+//Funcion que carga la imagen en pantalla.
+//Siempre y cuando exista en localStoragge.  
+function loadImage(){
+  const imgUrl = window.localStorage.getItem("imgPerfil")
+  if (imgUrl){
+    
+    document.getElementById("pic").setAttribute("src", imgUrl)
+  }
+}
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -135,4 +146,5 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
   //Cargamos el menu superior para pantallas menores a 1000px.
   addNavBar();
+  loadImage();
 });

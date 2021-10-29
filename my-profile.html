@@ -67,77 +67,96 @@
     <!-- Menu superior, pantallas chicas. -->
     <div id="navBar"></div>
 
+    <!-- Menu lateral fijo, pantallas grandes. -->
     <div class="sidebar pt-4">
       <a href="home.html"> <i class="fas fa-home"></i> Home</a>
-      <a href="categories.html">Categorías</a>
-      <a href="products.html">Productos</a>
-      <a href="sell.html"> <i class="fa-solid fa-sack-dollar"></i>Vender</a>
+      <a href="categories.html"
+        ><i class="fas fa-grip-horizontal"></i> Categorías</a
+      >
+      <a href="products.html"> <i class="fas fa-boxes"></i> Productos</a>
+      <a href="sell.html"> <i class="fas fa-shopping-cart"></i> Vender</a>
       <hr />
 
       <div class="text-muted align-bottom mt-5" style="bottom: 0">
         <!-- Imagen de google -->
         <div class="mb-3 row justify-content-center">
-          <div class="col-md-4"></div>
+          <div class="col-md-2"></div>
           <img
             id="pic"
-            class="rounded-circle col-auto justify-content-center"
+            class="rounded-circle w-50 col-auto justify-content-center"
           />
-          <div class="col-md-4"></div>
+          <div class="col-md-2"></div>
         </div>
 
         <a
           type="button"
           id="idGoogle"
-          class="dropdown-toggle active text-white"
+          class="dropdown-toggle text-white active"
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"
         >
+          <i class="fas fa-user"></i>
           Username
         </a>
         <div class="dropdown-menu bg-dark">
           <a class="dropdown-item" href="cart.html">Mi carrito</a>
           <a class="dropdown-item" href="my-profile.html">Perfil</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="index.html" onclick="SignOutTotal()"
-            >Cerrar Cesión</a
+          <a class="dropdown-item" href="index.html" onclick="SignOutTotal()">
+            <i class="fas fa-sign-out-alt"></i> Cerrar Cesión</a
           >
         </div>
 
-        <a href="index.html" onclick="SignOutTotal()">Cerrar sesión</a>
+        <a href="index.html" onclick="SignOutTotal()">
+          <i class="fas fa-sign-out-alt"></i> Cerrar sesión</a
+        >
       </div>
     </div>
 
 
     <main class="main">
-      <h2 class="text-center py-5">MI PERFIL</h4>
+      <h2 class="text-center py-5 bg-light">MI PERFIL</h4>
       <div class="container rounded bg-white pt-5">
         <div class="row">
             <div class="col-md-4 border-right">
-                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="90"><span class="font-weight-bold">Nombre de usuario</span><span class="text-black-50">correo@ejemplo.com</span><span>Uruguay</span></div>
+                <div class="d-flex flex-column align-items-center text-center  p-3 py-5">
+                  <img class="rounded-circle mt-5" id="imgProfilePrev" src="./img/imgprofile.png" width="90"><span id="nombreUserTxt" class="font-weight-bold">Nombre de usuario</span><span class="text-black-50" id="emailUserTxt">correo@ejemplo.com</span><span>Uruguay</span>
+
+
+                  <!-- Subir imagen a localStoragge -->
+                  <div class="dropzonee mt-2">
+                    <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+
+                    <!-- Input para cargar imagen. -->
+                  <input type="file" id="inputImage" class="upload-input" />
+                  </div>
+                  <button type="button" class="btn btn-info mt-3" name="uploadbutton">Subir imagen</button></div>
+                
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8 mt-5">
                 <div class="p-3 py-5">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <div class="d-flex flex-row align-items-center back"><i class="fa fa-long-arrow-left mr-1 mb-1"></i>
-                            <h6>Volver a inicio</h6>
+                            <a href="home.html">Volver a inicio</a>
                         </div>
                         <h6 class="text-right">Editar perfil</h6>
                     </div>
                     <div class="row mt-2">
-                        <div class="col-md-6"><input type="text" class="form-control" placeholder="Nombre*" ></div>
-                        <div class="col-md-6"><input type="text" class="form-control" placeholder="Apellido*"></div>
+                        <div class="col-md-6"><input type="text" class="form-control" id="perfilNombre" placeholder="Nombre*" ></div>
+                        <div class="col-md-6"><input type="text" class="form-control" id="perfilApellido" placeholder="Apellido*"></div>
                     </div>
                     <div class="row mt-3">
-                        <div class="col-md-6"><input type="text" class="form-control" placeholder="Email*"></div>
-                        <div class="col-md-6"><input type="text" class="form-control" placeholder="Telefono *"></div>
+                        <div class="col-md-6"><input type="text" class="form-control" id="perfilMail" placeholder="Email*"></div>
+                        <div class="col-md-6"><input type="text" id="perfilTelefono"class="form-control" placeholder="Telefono *"></div>
                     </div>
                     <div class="row mt-3">
-                        <div class="col-md-6"><input type="text" class="form-control" placeholder="address" disabled></div>
+                        <div class="col-md-6"><input type="text" class="form-control" placeholder="Direccion" disabled></div>
                         <div class="col-md-6"><input type="text" class="form-control" disabled placeholder="Pais"></div>
                     </div>
                     
-                    <div class="mt-5 text-right"><button class="btn btn-success" onclick="saveChange();" type="button">Guardar datos</button></div>
+                    <div class="mt-5 text-right">
+                      <small class="mr-3 text-danger" id="alertPerfil"></small><button class="btn btn-success" onclick="saveChange();" type="button">Guardar datos</button></div>
                 </div>
             </div>
         </div>
@@ -145,9 +164,9 @@
     </main>
 
     <footer class="text-muted bg-light text-center mt-5">
-      <div class="container">
-        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-        <p>
+      <div class="container main">
+        <p class="main">Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+        <p class="main">
           Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la
           letra del obligatorio.
         </p>
