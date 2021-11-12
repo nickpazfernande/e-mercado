@@ -2,6 +2,8 @@
 let USD = 0;
 let carrito = [];
 let currencyActive = "UYU ";
+let costoEnvio = 0.13;
+let finaly = 0;
 
 //Funcion que se ejecuta al cargar la pagina.
 document.addEventListener("DOMContentLoaded", function (e) {
@@ -25,7 +27,7 @@ function subTotalCost(id) {
 function showCart() {
   let html = "";
   let total = 0;
-  let finaly = 0;
+   finaly = 0;
   //For que recorre el array.
   for (let i = 0; i < carrito.articles.length; i++) {
     total = currency(i, carrito.articles[i].count);
@@ -49,8 +51,9 @@ function showCart() {
           <td id="subtotal${i}"> ${total}</td>
       </tr>`;
   }
+  
   //Mostrar total final.
-  let totalfinaly = finaly + finaly * 0.15;
+  let totalfinaly = finaly + finaly * costoEnvio;
   //Varias cargas a sus respectivos lugares en el HTML.
   document.getElementById("tableCart").innerHTML = html;
   document.getElementById("finally").innerHTML += finaly;
@@ -79,9 +82,11 @@ function calcularTotal() {
     total += parseInt(document.getElementById("subtotal" + i).textContent);
   }
 
+  finaly = total;
+
   //Cargas varias al HTML
   document.getElementById("finally").innerHTML = total;
-  document.getElementById("totalFinally").innerHTML = total + total * 0.15;
+  document.getElementById("totalFinally").innerHTML = total + total * costoEnvio;
   document.getElementById("opcionCuotas").innerHTML =
     "O hasta en 6 pagos de: " + currencyActive + parseInt(total / 6);
 }
@@ -94,22 +99,45 @@ function changeCurrency() {
 
     if (currencyActive != "UYU ") {
       //Si la moneda de la pagina esta en dolares, cambiamos a UYU.
-
-      document.getElementById("totalFinally").innerHTML = total / 40;
+      finaly = total * 40
+      document.getElementById("totalFinally").innerHTML = finaly;
       currencyActive = "UYU ";
       document.getElementById("opcionCuotas").innerHTML =
-        "O hasta en 6 pagos de: " + currencyActive + parseInt(total / 6);
+        "O hasta en 6 pagos de: " + currencyActive + parseInt((total*40) / 6);
     } else {
       // Cambiamos a dolares.
 
-      document.getElementById("totalFinally").innerHTML = total * 40;
+      finaly = total / 40
+      document.getElementById("totalFinally").innerHTML = Math.round(finaly) ;
       currencyActive = "USD ";
       document.getElementById("opcionCuotas").innerHTML =
-        "O hasta en 6 pagos de: " + currencyActive + parseInt(total / 6);
+        "O hasta en 6 pagos de: " + currencyActive + parseInt((total/40) / 6);
     }
   }
 }
 
 function showDireccion() {
   direccion.style.display = "block";
+}
+
+function changeCostoEnvio () {
+  let costoEnvioInPage = document.getElementById("costoEnvio").value
+  console.log(costoEnvioInPage)
+  let porcentaje = 0;
+  if (costoEnvioInPage == 1) {
+    costoEnvio = 0.05
+    porcentaje = "$5%";
+    
+  }  if (costoEnvioInPage == 2) {
+    costoEnvio = 0.07
+    porcentaje = "$7%";
+  } if (costoEnvioInPage == 3){
+    costoEnvio = 0.15
+    porcentaje = "$15%";
+    
+  }
+  document.getElementById("costoEnvioTd").innerHTML = porcentaje;
+
+  calcularTotal()
+
 }

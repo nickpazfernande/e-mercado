@@ -37,6 +37,7 @@ function saveChange() {
 function loadChange(){
     //Cargo los valores de los inputs.
     let perfil = JSON.parse(localStorage.getItem("perfil"))
+    if (perfil ){
     document.getElementById("perfilNombre").value = perfil.nombre;
     document.getElementById("perfilApellido").value = perfil.apellido;
     document.getElementById("perfilMail").value = perfil.email;
@@ -45,6 +46,7 @@ function loadChange(){
     //Cargo valores debajo de la imagen. 
     document.getElementById("nombreUserTxt").innerHTML = perfil.nombre;
     document.getElementById("emailUserTxt").innerHTML = perfil.email;
+  }
 }
 
 
@@ -56,8 +58,7 @@ document.querySelector("#inputImage").addEventListener("change", function () {
   //Evento de la variable, si se cargo algo, settea en el localStoragge su result.
   reader.addEventListener("load", () => {
     localStorage.setItem("imgPerfil", reader.result);
-    loadImage();
-    loadImageProfile();
+    
   })
 
   reader.readAsDataURL(this.files[0]);
