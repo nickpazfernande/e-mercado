@@ -213,13 +213,13 @@
             
             <div class="mb-2 row ">
               <div class="col-md-6">
-                <label for="exampleInputEmail1" class="form-label">Calle</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="inputCalle" class="form-label">Calle</label>
+                <input class="form-control" id="inputCalle" aria-describedby="emailHelp">
 
               </div>
               <div class="col-md-6">
-                <label for="exampleInputEmail1" class="form-label">Numero</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="numeroDir" class="form-label">Numero</label>
+                <input type="number" class="form-control" id="numeroDir" aria-describedby="emailHelp">
 
               </div>
               <div class="mb-2">
@@ -227,8 +227,8 @@
                 <input  class="form-control" id="inputCiudad">
               </div>
               <div class="mb-2 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Acepto las politicas de seguridad.</label>
+                <input type="checkbox" class="form-check-input" id="checkPoliticas">
+                <label class="form-check-label" for="checkPoliticas">Acepto las politicas de seguridad.</label>
               </div>
 
               <div class="modal-header">
@@ -251,7 +251,7 @@
 
                   <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
                     <div class="card-body text-center">
-                      <button class="btn btn-primary btn-lg btn-block" type="submit">Arreglar con el vendedor</button>
+                      <button class="btn btn-primary btn-lg btn-block" type="submit"  onclick="confirmarCompra()">Arreglar con el vendedor</button>
                     </div>
                   </div>
                 </div>
@@ -269,30 +269,29 @@
                       <div class="row">
                         <div class="col-md-6 mb-3">
                           <label for="cc-name">Nombre Completo</label>
-                          <input type="text" class="form-control" id="cc-name" placeholder="Nombre" required>
+                          <input type="text" class="form-control" id="cc-name" placeholder="Nombre" >
                           <small class="text-muted">Nombre visible en la tarjeta.</small>
 
                         </div>
                         <div class="col-md-6 mb-3">
                           <label for="cc-number">Numero de tarjeta</label>
-                          <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                          <input type="text" class="form-control" id="cc-number" placeholder="" >
 
                         </div>
                       </div>
                       <div class="row">
                         <div class="col-md-3 mb-3">
                           <label for="cc-expiration">Expiración</label>
-                          <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                          <input type="text" class="form-control" id="cc-expiration" placeholder="" >
 
                         </div>
                         <div class="col-md-3 mb-3">
                           <label for="cc-expiration">CVV</label>
-                          <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
-
+                          <input type="text" class="form-control" id="cc-cvv" placeholder="" >
                         </div>
                       </div>
                       <hr class="mb-4">
-                      <button class="btn btn-primary btn-lg btn-block" type="submit">Confirmar compra</button>
+                      <button class="btn btn-primary btn-lg btn-block" id="btnSubmit" onclick="confirmarCompraTarjeta(event)">Confirmar compra</button>
                     </div>
                   </div>
                 </div>
@@ -302,6 +301,7 @@
 
             </div>
             <div class="modal-footer">
+              <small id="mensajeModal"></small>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 
             </div>

@@ -27,7 +27,7 @@ function subTotalCost(id) {
 function showCart() {
   let html = "";
   let total = 0;
-   finaly = 0;
+  finaly = 0;
   //For que recorre el array.
   for (let i = 0; i < carrito.articles.length; i++) {
     total = currency(i, carrito.articles[i].count);
@@ -38,20 +38,17 @@ function showCart() {
       <th scope="row">${i + 1}</th>
           <td>${carrito.articles[i].name}</td>
           <td class="ocultarTabla">
-             <img class="img-fluid h-75 w-75 ocultarTabla" src="${
-               carrito.articles[i].src
-             }" alt="" />
+             <img class="img-fluid h-75 w-75 ocultarTabla" src="${carrito.articles[i].src
+      }" alt="" />
           </td>
-          <td> <input type="number" min ="1" id="${i}" onchange="subTotalCost(${i})" value=${
-      carrito.articles[i].count
-    }> </td>
-          <td>${carrito.articles[i].currency} ${
-      carrito.articles[i].unitCost
-    }</td>
+          <td> <input type="number" min ="1" id="${i}" onchange="subTotalCost(${i})" value=${carrito.articles[i].count
+      }> </td>
+          <td>${carrito.articles[i].currency} ${carrito.articles[i].unitCost
+      }</td>
           <td id="subtotal${i}"> ${total}</td>
       </tr>`;
   }
-  
+
   //Mostrar total final.
   let totalfinaly = finaly + finaly * costoEnvio;
   //Varias cargas a sus respectivos lugares en el HTML.
@@ -86,7 +83,8 @@ function calcularTotal() {
 
   //Cargas varias al HTML
   document.getElementById("finally").innerHTML = total;
-  document.getElementById("totalFinally").innerHTML = total + total * costoEnvio;
+  document.getElementById("totalFinally").innerHTML =
+    total + total * costoEnvio;
   document.getElementById("opcionCuotas").innerHTML =
     "O hasta en 6 pagos de: " + currencyActive + parseInt(total / 6);
 }
@@ -99,19 +97,19 @@ function changeCurrency() {
 
     if (currencyActive != "UYU ") {
       //Si la moneda de la pagina esta en dolares, cambiamos a UYU.
-      finaly = total * 40
+      finaly = total * 40;
       document.getElementById("totalFinally").innerHTML = finaly;
       currencyActive = "UYU ";
       document.getElementById("opcionCuotas").innerHTML =
-        "O hasta en 6 pagos de: " + currencyActive + parseInt((total*40) / 6);
+        "O hasta en 6 pagos de: " + currencyActive + parseInt((total * 40) / 6);
     } else {
       // Cambiamos a dolares.
 
-      finaly = total / 40
-      document.getElementById("totalFinally").innerHTML = Math.round(finaly) ;
+      finaly = total / 40;
+      document.getElementById("totalFinally").innerHTML = Math.round(finaly);
       currencyActive = "USD ";
       document.getElementById("opcionCuotas").innerHTML =
-        "O hasta en 6 pagos de: " + currencyActive + parseInt((total/40) / 6);
+        "O hasta en 6 pagos de: " + currencyActive + parseInt(total / 40 / 6);
     }
   }
 }
@@ -120,24 +118,69 @@ function showDireccion() {
   direccion.style.display = "block";
 }
 
-function changeCostoEnvio () {
-  let costoEnvioInPage = document.getElementById("costoEnvio").value
-  console.log(costoEnvioInPage)
+function changeCostoEnvio() {
+  let costoEnvioInPage = document.getElementById("costoEnvio").value;
+  console.log(costoEnvioInPage);
   let porcentaje = 0;
   if (costoEnvioInPage == 1) {
-    costoEnvio = 0.05
+    costoEnvio = 0.05;
     porcentaje = "$5%";
-    
-  }  if (costoEnvioInPage == 2) {
-    costoEnvio = 0.07
+  }
+  if (costoEnvioInPage == 2) {
+    costoEnvio = 0.07;
     porcentaje = "$7%";
-  } if (costoEnvioInPage == 3){
-    costoEnvio = 0.15
+  }
+  if (costoEnvioInPage == 3) {
+    costoEnvio = 0.15;
     porcentaje = "$15%";
-    
   }
   document.getElementById("costoEnvioTd").innerHTML = porcentaje;
 
-  calcularTotal()
+  calcularTotal();
+}
 
+function confirmarCompra() {
+  let calle = document.getElementById("inputCalle").value;
+  let numero = document.getElementById("numeroDir").value;
+  let ciudad = document.getElementById("inputCiudad").value;
+  let check = document.getElementById("checkPoliticas").checked;
+
+  //Si acepta la politica se avanza.
+  if (check) {
+    if (calle == "" || numero == "" || ciudad == "") {
+
+      //Si alguno de los campos queda vacio se notifica al usuario. 
+      document.getElementById("mensajeModal").className =
+        "text-secondary text-danger mr-3 ";
+      document.getElementById("mensajeModal").innerHTML =
+        "*Algunos campos han quedado vacios.";
+    } else {
+      //Si esta todo correcto se realiza la compra. 
+    document.getElementById("mensajeModal").className = "text-secondary text-success mr-3 ";
+    document.getElementById('mensajeModal').innerHTML = "*Compra realizada con exito."
+    }
+  } else {
+    //de lo contrario se muestra un mensaje
+    document.getElementById("mensajeModal").className =
+      "text-secondary text-danger mr-3 ";
+    document.getElementById("mensajeModal").innerHTML =
+      "*No ha aceptado las políticas de seguridad.";
+  }
+}
+
+
+function confirmarCompraTarjeta(evt) {
+  evt.preventDefault();
+  
+  let ccv = document.getElementById('cc-cvv').value
+  let expiration = document.getElementById('cc-expiration').value
+  let numeroTarjeta = document.getElementById('cc-number').value
+  let nombre = document.getElementById('cc-name').value
+
+  alert(ccv + expiration + numeroTarjeta + nombre);
+
+
+
+  confirmarCompra();
+  
 }
