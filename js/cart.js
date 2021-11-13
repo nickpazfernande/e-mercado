@@ -38,13 +38,16 @@ function showCart() {
       <th scope="row">${i + 1}</th>
           <td>${carrito.articles[i].name}</td>
           <td class="ocultarTabla">
-             <img class="img-fluid h-75 w-75 ocultarTabla" src="${carrito.articles[i].src
-      }" alt="" />
+             <img class="img-fluid h-75 w-75 ocultarTabla" src="${
+               carrito.articles[i].src
+             }" alt="" />
           </td>
-          <td> <input type="number" min ="1" id="${i}" onchange="subTotalCost(${i})" value=${carrito.articles[i].count
-      }> </td>
-          <td>${carrito.articles[i].currency} ${carrito.articles[i].unitCost
-      }</td>
+          <td> <input type="number" min ="1" id="${i}" onchange="subTotalCost(${i})" value=${
+      carrito.articles[i].count
+    }> </td>
+          <td>${carrito.articles[i].currency} ${
+      carrito.articles[i].unitCost
+    }</td>
           <td id="subtotal${i}"> ${total}</td>
       </tr>`;
   }
@@ -114,10 +117,6 @@ function changeCurrency() {
   }
 }
 
-function showDireccion() {
-  direccion.style.display = "block";
-}
-
 function changeCostoEnvio() {
   let costoEnvioInPage = document.getElementById("costoEnvio").value;
   console.log(costoEnvioInPage);
@@ -139,7 +138,10 @@ function changeCostoEnvio() {
   calcularTotal();
 }
 
-function confirmarCompra() {
+//Funcion que verifica los campos de direccion
+//Dependiendo de donde se la llame termina la compra.
+function confirmarCompra(evt, num) {
+  evt.preventDefault();
   let calle = document.getElementById("inputCalle").value;
   let numero = document.getElementById("numeroDir").value;
   let ciudad = document.getElementById("inputCiudad").value;
@@ -148,16 +150,27 @@ function confirmarCompra() {
   //Si acepta la politica se avanza.
   if (check) {
     if (calle == "" || numero == "" || ciudad == "") {
-
-      //Si alguno de los campos queda vacio se notifica al usuario. 
+      //Si alguno de los campos queda vacio se notifica al usuario.
       document.getElementById("mensajeModal").className =
         "text-secondary text-danger mr-3 ";
       document.getElementById("mensajeModal").innerHTML =
         "*Algunos campos han quedado vacios.";
     } else {
-      //Si esta todo correcto se realiza la compra. 
-    document.getElementById("mensajeModal").className = "text-secondary text-success mr-3 ";
-    document.getElementById('mensajeModal').innerHTML = "*Compra realizada con exito."
+      
+      //Si solo se tiene que verificar esto se realiza la compra.
+      //De lo contrario no se muestra nada, ya que aun se debe de verificar la tarjeta.
+      if (num == 1) {
+        document.getElementById("mensajeModal").className =
+          "text-secondary text-success mr-3 ";
+        document.getElementById("mensajeModal").innerHTML =
+          "*Compra realizada con exito.";
+        //Se muestra el mensaje de compra exitosa y a los 3 segundos se redirige al home.
+        setTimeout(function () {
+          window.location.replace("home.html");
+        }, 2000);
+        
+      }
+      return "ok";
     }
   } else {
     //de lo contrario se muestra un mensaje
@@ -168,19 +181,34 @@ function confirmarCompra() {
   }
 }
 
-
+//Funcion que se encarga de llamar a la funcion que verifica los campos de direccion
+//Y luego verifica los campos de la tarjeta y realiza la compra de estar todo ok. 
 function confirmarCompraTarjeta(evt) {
-  evt.preventDefault();
-  
-  let ccv = document.getElementById('cc-cvv').value
-  let expiration = document.getElementById('cc-expiration').value
-  let numeroTarjeta = document.getElementById('cc-number').value
-  let nombre = document.getElementById('cc-name').value
-
-  alert(ccv + expiration + numeroTarjeta + nombre);
-
-
-
-  confirmarCompra();
-  
+  //Confirmo los primeros campos.
+  let confirmation = confirmarCompra(evt, 2);
+  //Guardo los campos de tarjeta,
+  let ccv = document.getElementById("cc-cvv").value;
+  let expiration = document.getElementById("cc-expiration").value;
+  let numeroTarjeta = document.getElementById("cc-number").value;
+  let nombre = document.getElementById("cc-name").value;
+  if (confirmation == "ok") {
+    //Realizo la verificacion de los mismos.
+    if (ccv == "" || expiration == "" || numeroTarjeta == "" || nombre == "") {
+      //Si alguno de los campos queda vacio se notifica al usuario.
+      document.getElementById("mensajeModal").className =
+        "text-secondary text-danger mr-3 ";
+      document.getElementById("mensajeModal").innerHTML =
+        "*Algunos campos han quedado vacios.";
+    } else {
+      //Si esta todo correcto se realiza la compra.
+      document.getElementById("mensajeModal").className =
+        "text-secondary text-success mr-3 ";
+      document.getElementById("mensajeModal").innerHTML =
+        "*Compra realizada con exito.";
+      //Se muestra el mensaje de compra exitosa y a los 3 segundos se redirige al home.
+      setTimeout(function () {
+        window.location.replace("home.html");
+      }, 2000);
+    }
+  }
 }
